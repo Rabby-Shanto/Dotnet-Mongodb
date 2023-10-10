@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "j8KOEhS1rHVy306KsxAt+faBEIoX78lvr27XXuu0JZ3xFsQq6aU5TO+ZPvdvFsz/QKXXm7bqu0Jslx9GE2pYYA==",
+  "success": true,
+  "projectFilePath": "E:\\Dotnet Mongo\\MongoDbSharp.Abstractions\\MongoDbSharp.Abstractions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\mongodb.bson\\2.22.0\\mongodb.bson.2.22.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

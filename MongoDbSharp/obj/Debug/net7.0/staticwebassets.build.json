@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "jmMN8aZi/WSEiidbq2dsguKYGyrXrZL+JL9oJNVkE9g=",
+  "Source": "MongoDbSharp",
+  "BasePath": "_content/MongoDbSharp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

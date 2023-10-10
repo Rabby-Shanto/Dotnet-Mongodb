@@ -1,0 +1,12 @@
+E:\Dotnet Mongo\MongoDbSharp.Model\bin\Debug\net7.0\MongoDbSharp.Model.deps.json
+E:\Dotnet Mongo\MongoDbSharp.Model\bin\Debug\net7.0\MongoDbSharp.Model.dll
+E:\Dotnet Mongo\MongoDbSharp.Model\bin\Debug\net7.0\MongoDbSharp.Model.pdb
+E:\Dotnet Mongo\MongoDbSharp.Model\obj\Debug\net7.0\MongoDbSharp.Model.csproj.AssemblyReference.cache
+E:\Dotnet Mongo\MongoDbSharp.Model\obj\Debug\net7.0\MongoDbSharp.Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\Dotnet Mongo\MongoDbSharp.Model\obj\Debug\net7.0\MongoDbSharp.Model.AssemblyInfoInputs.cache
+E:\Dotnet Mongo\MongoDbSharp.Model\obj\Debug\net7.0\MongoDbSharp.Model.AssemblyInfo.cs
+E:\Dotnet Mongo\MongoDbSharp.Model\obj\Debug\net7.0\MongoDbSharp.Model.csproj.CoreCompileInputs.cache
+E:\Dotnet Mongo\MongoDbSharp.Model\obj\Debug\net7.0\MongoDbSharp.Model.dll
+E:\Dotnet Mongo\MongoDbSharp.Model\obj\Debug\net7.0\refint\MongoDbSharp.Model.dll
+E:\Dotnet Mongo\MongoDbSharp.Model\obj\Debug\net7.0\MongoDbSharp.Model.pdb
+E:\Dotnet Mongo\MongoDbSharp.Model\obj\Debug\net7.0\ref\MongoDbSharp.Model.dll

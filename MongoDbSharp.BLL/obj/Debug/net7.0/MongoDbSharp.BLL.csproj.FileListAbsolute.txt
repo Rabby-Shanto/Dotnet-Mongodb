@@ -1,0 +1,17 @@
+E:\Dotnet Mongo\MongoDbSharp.BLL\bin\Debug\net7.0\MongoDbSharp.BLL.deps.json
+E:\Dotnet Mongo\MongoDbSharp.BLL\bin\Debug\net7.0\MongoDbSharp.BLL.dll
+E:\Dotnet Mongo\MongoDbSharp.BLL\bin\Debug\net7.0\MongoDbSharp.BLL.pdb
+E:\Dotnet Mongo\MongoDbSharp.BLL\bin\Debug\net7.0\MongoDbSharp.Abstractions.dll
+E:\Dotnet Mongo\MongoDbSharp.BLL\bin\Debug\net7.0\MongoDbSharp.Model.dll
+E:\Dotnet Mongo\MongoDbSharp.BLL\bin\Debug\net7.0\MongoDbSharp.Abstractions.pdb
+E:\Dotnet Mongo\MongoDbSharp.BLL\bin\Debug\net7.0\MongoDbSharp.Model.pdb
+E:\Dotnet Mongo\MongoDbSharp.BLL\obj\Debug\net7.0\MongoDbSharp.BLL.csproj.AssemblyReference.cache
+E:\Dotnet Mongo\MongoDbSharp.BLL\obj\Debug\net7.0\MongoDbSharp.BLL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Dotnet Mongo\MongoDbSharp.BLL\obj\Debug\net7.0\MongoDbSharp.BLL.AssemblyInfoInputs.cache
+E:\Dotnet Mongo\MongoDbSharp.BLL\obj\Debug\net7.0\MongoDbSharp.BLL.AssemblyInfo.cs
+E:\Dotnet Mongo\MongoDbSharp.BLL\obj\Debug\net7.0\MongoDbSharp.BLL.csproj.CoreCompileInputs.cache
+E:\Dotnet Mongo\MongoDbSharp.BLL\obj\Debug\net7.0\MongoDbSharp.BLL.csproj.CopyComplete
+E:\Dotnet Mongo\MongoDbSharp.BLL\obj\Debug\net7.0\MongoDbSharp.BLL.dll
+E:\Dotnet Mongo\MongoDbSharp.BLL\obj\Debug\net7.0\refint\MongoDbSharp.BLL.dll
+E:\Dotnet Mongo\MongoDbSharp.BLL\obj\Debug\net7.0\MongoDbSharp.BLL.pdb
+E:\Dotnet Mongo\MongoDbSharp.BLL\obj\Debug\net7.0\ref\MongoDbSharp.BLL.dll
