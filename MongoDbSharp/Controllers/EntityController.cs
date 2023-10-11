@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MongoDbSharp.Abstractions.BLL;
-using MongoDbSharp.Abstractions.Repository.Base;
 using MongoDbSharp.Model;
-using System.Linq.Expressions;
+using MongoDbSharp.Model.DTO;
 
 namespace MongoDbSharp.Controllers
 {
@@ -30,10 +29,18 @@ namespace MongoDbSharp.Controllers
         }
 
         [HttpGet("search")]
-        public IActionResult Search(string searchTerm)
+        public IActionResult Search([FromQuery] FilterDto searchTerm)
         {
-            Expression<Func<EntityModel, bool>> predicate = entity => entity.Name.Contains(searchTerm);
-            var searchResults = _entity.SearchFor(predicate);
+            //if (searchTerm == null )
+            //{
+            //    return Ok(new List<EntityModel>());
+            //}
+            //Expression<Func<EntityModel, bool>> predicate = entity => entity.Name.Contains(searchTerm);
+            //var searchResults = _entity.SearchFor(predicate);
+
+
+            //return Ok(searchResults);
+            var searchResults = _entity.SearchFor(searchTerm);
 
             return Ok(searchResults);
         }

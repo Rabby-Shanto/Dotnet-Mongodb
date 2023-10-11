@@ -1,6 +1,7 @@
 ﻿using MongoDbSharp.Abstractions.BLL.Base;
 using MongoDbSharp.Abstractions.Repository.Base;
 using MongoDbSharp.Model;
+using MongoDbSharp.Model.DTO;
 using System.Linq.Expressions;
 
 namespace MongoDbSharp.BLL.Base
@@ -34,10 +35,16 @@ namespace MongoDbSharp.BLL.Base
             return _repository.Insert(entity);
         }
 
-        public IList<T> SearchFor(Expression<Func<T, bool>> predicate)
+        public IList<T> SearchFor(FilterDto searchCriteria)
         {
-            return _repository.SearchFor(predicate);
+            return _repository.SearchFor(searchCriteria);
         }
+
+        //public IList<T> SearchFor(Expression<Func<T, bool>> predicate)
+        //{
+        //    return _repository.SearchFor(predicate);
+        //}
+
 
         public bool Update(T entity)
         {

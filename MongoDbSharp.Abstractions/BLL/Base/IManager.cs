@@ -1,5 +1,5 @@
 ﻿using MongoDbSharp.Model;
-using System.Linq.Expressions;
+using MongoDbSharp.Model.DTO;
 
 namespace MongoDbSharp.Abstractions.BLL.Base
 {
@@ -8,7 +8,8 @@ namespace MongoDbSharp.Abstractions.BLL.Base
         bool Insert(T entity);
         bool Update(T entity);
         bool Delete(T entity);
-        IList<T> SearchFor(Expression<Func<T, bool>> predicate);
+        //IList<T> SearchFor(Expression<Func<T, bool>> predicate);
+        IList<T> SearchFor(FilterDto searchCriteria);
         IList<T> GetAll();
         T GetById(string id);
     }

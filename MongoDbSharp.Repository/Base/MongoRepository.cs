@@ -3,7 +3,7 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDbSharp.Abstractions.Repository.Base;
 using MongoDbSharp.Model;
-using System.Linq.Expressions;
+using MongoDbSharp.Model.DTO;
 
 namespace MongoDbSharp.Repository.Base
 {
@@ -41,10 +41,26 @@ namespace MongoDbSharp.Repository.Base
             return true;
         }
 
-
-        public IList<T> SearchFor(Expression<Func<T, bool>> predicate)
+        public IList<T> SearchFor(FilterDto searchCriteria)
         {
-            return _db.AsQueryable<T>().Where(predicate.Compile()).ToList();
+            IQueryable<T> query = _db.AsQueryable<T>();
+
+            if (!string.IsNullOrEmpty(searchCriteria.Name))
+            {
+                query = query.Where(entity => entity.Name.Contains(searchCriteria.Name));
+            }
+
+            if (!string.IsNullOrEmpty(searchCriteria.InstituteName))
+            {
+                query = query.Where(entity => entity.InstituteName == searchCriteria.InstituteName);
+            }
+
+            if (!string.IsNullOrEmpty(searchCriteria.Gender))
+            {
+                query = query.Where(entity => entity.Gender == searchCriteria.Gender);
+            }
+
+            return query.ToList();
         }
 
         public bool Update(T entity)
@@ -54,7 +70,16 @@ namespace MongoDbSharp.Repository.Base
 
             var filter = Builders<T>.Filter.Eq("_id", entity.P_Id);
 
-            return _db.ReplaceOne(filter,entity).ModifiedCount> 0;
+            return _db.ReplaceOne(filter, entity).ModifiedCount > 0;
         }
     }
+
+
+    //public IList<T> SearchFor(Expression<Func<T, bool>> predicate)
+    //{
+    //    //return _db.AsQueryable<T>().Where(predicate.Compile()).ToList();
+    //    FilterDefinition<T> filterDefinition = Builders<T>.Filter.Where(predicate);
+    //    return _db.Find(filterDefinition).ToList();
+    //}
+
 }
