@@ -20,7 +20,7 @@ namespace MongoDbSharp.Repository.Base
         public bool Delete(T entity)
 
         {
-            var filter = Builders<T>.Filter.Eq("_id", entity.P_Id);
+            var filter = Builders<T>.Filter.Eq("_id", entity.Id);
             return _db.DeleteOne(filter).DeletedCount > 0;
         }
 
@@ -31,7 +31,7 @@ namespace MongoDbSharp.Repository.Base
 
         public T GetById(string id)
         {
-            return  _db.Find(Builders<T>.Filter.Eq("_id", id)).FirstOrDefault();
+            return _db.Find(Builders<T>.Filter.Eq("_id", id)).FirstOrDefault();
         }
 
 
@@ -65,10 +65,10 @@ namespace MongoDbSharp.Repository.Base
 
         public bool Update(T entity)
         {
-            if (entity.P_Id == null)
+            if (entity.Id == null)
                 return Insert(entity);
 
-            var filter = Builders<T>.Filter.Eq("_id", entity.P_Id);
+            var filter = Builders<T>.Filter.Eq("_id", entity.Id);
 
             return _db.ReplaceOne(filter, entity).ModifiedCount > 0;
         }

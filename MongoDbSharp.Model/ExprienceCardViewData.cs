@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace MongoDbSharp.Model
 {
     [BsonIgnoreExtraElements]
-    public class ExprienceCardViewDataDTO
+    public class ExprienceCardViewData
     {
         public int P_ID { get; set; }
         public int EX_ID { get; set; }

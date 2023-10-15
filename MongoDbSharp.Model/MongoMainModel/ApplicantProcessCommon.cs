@@ -1,0 +1,99 @@
+﻿namespace MongoDbSharp.Model.MongoMainModel
+{
+    public class ApplicantProcessCommon
+    {
+        public bool LinkedInApplied { get; set; }
+        public bool LinkedInCVupdated { get; set; }
+        public string LinkedInUrl { get; set; }
+        public string LinkedInProfile { get; set; }
+        public string CrpApplID { get; set; }
+        public string EncrpID { get; set; }
+        public int SLNo { get; set; }
+        public int ApplyID { get; set; }
+        public string ChkVal { get; set; }
+        public string Photo { get; set; }
+        public int Cetificate { get; set; }
+        public int AssessmentCat { get; set; }
+        public string IsAssesmnt { get; set; }
+        public string AssesmntRank { get; set; }
+        public int VideoResume { get; set; }
+        public int IsFollowingThisCompany { get; set; }
+        public string AppliedDate { get; set; }
+        public string Age { get; set; }
+        public string Salary { get; set; }
+        public string ApplicantCurrentSalary { get; set; }
+        public bool ViewStatus { get; set; }
+        public int Status { get; set; }
+        public string LevelStatus { get; set; }
+        public string Name { get; set; }
+        public string Mobile { get; set; }
+        public string Email { get; set; }
+        public string ApplicantLocation { get; set; }
+        public int AppliedNo { get; set; }
+        public int AttachedCV { get; set; }
+        public string ResumeType { get; set; }
+        public string Degree { get; set; }
+        public string University { get; set; }
+        public int MatchingScore { get; set; }
+        public string videoViewed { get; set; }
+        public string VideoRecSubmitted { get; set; }
+        public string invitedForVI { get; set; }
+        public int VideoRecStar { get; set; }
+        public string VideoRecComment { get; set; }
+        public string VideoRecApplicantResponse { get; set; }
+        public int VideoRecDeleted { get; set; }
+        public string Exp { get; set; }
+        public string Exps { get; set; }
+        public string IsApplRej { get; set; }
+        public int SchduleNo { get; set; }
+        public int SchduleRejected { get; set; }
+        public string AlreadyInActivities { get; set; }
+        public int Comments { get; set; }
+        public string Comment_Detail { get; set; }
+        public string Comment_Date { get; set; }
+        public int Total_Comment { get; set; }
+        public string Comment_Id { get; set; }
+        public int AppliedPriority { get; set; }
+        public int FairjobCount { get; set; }
+        public bool InPageGuideHire { get; set; }
+        public bool InPageGuideNotify { get; set; }
+        public bool InPageGuideAttendant { get; set; }
+        public bool InPageGuideScore { get; set; }
+        public int IsUnlocked { get; set; }
+        public string cnvId { get; set; }
+        public string senderType { get; set; }
+        public string ReadOn { get; set; }
+        public string ePid { get; set; }
+        public string eMessageRData { get; set; }
+    }
+    public class JobInbox
+    {
+        public string Error { get; set; }
+        public string JObID { get; set; }
+        public int CompanyID { get; set; }
+        public string CPage { get; set; }
+        public string PageType { get; set; }
+        public string OrderType { get; set; }
+        public string Ord { get; set; }
+        public bool TNode { get; set; }
+        public int TotalCVFound { get; set; }
+        public int TotalNotMovedApplicant { get; set; }
+        public int NewVideoSubmitted { get; set; }
+        public string NoWatchVideo { get; set; }
+        public int NotVerifiedCompany { get; set; }
+        public int HaveNoPurchasedSMS { get; set; }
+        public string NotifyAll { get; set; }
+        public string BulKScore { get; set; }
+        public string StepSubRej { get; set; }
+        public string StepNew { get; set; }
+        public int StepIdentity { get; set; }
+        public string SendEmail { get; set; }
+        public string PageList { get; set; }
+        public bool PaymentStatus { get; set; }
+        public string BDJS { get; set; }
+        public string MovedApplicants { get; set; }
+        public List<ApplicantProcessCommon> Applicants { get; set; }
+        public int HighPrioritySorting { get; set; }
+        public string sql { get; set; }
+    }
+}

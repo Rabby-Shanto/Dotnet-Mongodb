@@ -8,8 +8,7 @@ namespace MongoDbSharp.Model
         public int JP_ID { get; set; }
         public int CP_ID { get; set; }
         public int TApply { get; set; }
-        public int Texp { get; set; } 
-        public DateTime P_Date { get; set; }
+        public DateTime? P_Date { get; set; }
         public int ExpectedSalary { get; set; }
         public bool Viewed { get; set; }
         public bool Rejected { get; set; }
@@ -19,7 +18,7 @@ namespace MongoDbSharp.Model
         public int PurchaseID { get; set; }
         public string FollowedEmployer { get; set; }
         public DateTime CreatedOn { get; set; }
-        public DateTime LastUpdatedOn { get; set;}
+        public DateTime LastUpdatedOn { get; set; }
         public List<ApplicantProcessInfo> ApplicantProcessInfo { get; set; }
         public List<CommentsData> CommentsData { get; set; }
     }

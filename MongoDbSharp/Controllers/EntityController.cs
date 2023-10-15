@@ -16,16 +16,17 @@ namespace MongoDbSharp.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IList<EntityModel>> Get() {
-          var result = _entity.GetAll();
+        public ActionResult<IList<EntityModel>> Get()
+        {
+            var result = _entity.GetAll();
             return Ok(result);
-        
+
         }
         [HttpPost]
         public IActionResult Post([FromBody] EntityModel entity)
         {
             _entity.Insert(entity);
-            return CreatedAtAction(nameof(Get), new {id  = entity.P_Id }, entity);
+            return CreatedAtAction(nameof(Get), new { id = entity.Id }, entity);
         }
 
         [HttpGet("search")]
