@@ -55,3 +55,5 @@ E:\Dotnet Mongo\MongoDbSharp\bin\Debug\net7.0\MongoDbSharp.Configurations.dll
 E:\Dotnet Mongo\MongoDbSharp\bin\Debug\net7.0\MongoDbSharp.Repository.dll
 E:\Dotnet Mongo\MongoDbSharp\bin\Debug\net7.0\MongoDbSharp.Configurations.pdb
 E:\Dotnet Mongo\MongoDbSharp\bin\Debug\net7.0\MongoDbSharp.Repository.pdb
+E:\Dotnet Mongo\MongoDbSharp\bin\Debug\net7.0\AutoMapper.dll
+E:\Dotnet Mongo\MongoDbSharp\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

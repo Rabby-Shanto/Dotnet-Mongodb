@@ -3,7 +3,7 @@ using MongoDbSharp.Model.DTO;
 
 namespace MongoDbSharp.Abstractions.BLL.Base
 {
-    public interface IManager<T> where T : EntityModel
+    public interface IManager<T> where T : class
     {
         bool Insert(T entity);
         bool Update(T entity);

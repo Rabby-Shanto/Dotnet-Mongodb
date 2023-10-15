@@ -1,13 +1,14 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using MongoDbSharp.Abstractions.Repository.Base;
 using MongoDbSharp.Model;
 using MongoDbSharp.Model.DTO;
 
 namespace MongoDbSharp.Repository.Base
 {
-    public abstract class MongoRepository<T> : IRepository<T> where T : EntityModel
+    public abstract class MongoRepository<T> : IRepository<T> where T : class
     {
         private readonly IMongoCollection<T> _db;
         public MongoRepository(IOptions<DbModel> mongoDBSettings)
@@ -17,10 +18,15 @@ namespace MongoDbSharp.Repository.Base
             _db = database.GetCollection<T>(mongoDBSettings.Value.CollectionName);
         }
 
-        public bool Delete(T entity)
 
+        public bool Delete(T entity)
         {
-            var filter = Builders<T>.Filter.Eq("_id", entity.Id);
+            var idProperty = typeof(T).GetProperty("Id");
+            if (idProperty == null)
+                throw new InvalidOperationException("Type does not have an 'Id' property.");
+
+            var idValue = idProperty.GetValue(entity);
+            var filter = Builders<T>.Filter.Eq("_id", idValue);
             return _db.DeleteOne(filter).DeletedCount > 0;
         }
 
@@ -34,7 +40,6 @@ namespace MongoDbSharp.Repository.Base
             return _db.Find(Builders<T>.Filter.Eq("_id", id)).FirstOrDefault();
         }
 
-
         public bool Insert(T entity)
         {
             _db.InsertOne(entity);
@@ -43,43 +48,36 @@ namespace MongoDbSharp.Repository.Base
 
         public IList<T> SearchFor(FilterDto searchCriteria)
         {
-            IQueryable<T> query = _db.AsQueryable<T>();
-
-            if (!string.IsNullOrEmpty(searchCriteria.Name))
+            var filterBuilder = Builders<T>.Filter;
+            FilterDefinition<T> filter = filterBuilder.Empty;
+            foreach (var property in typeof(FilterDto).GetProperties())
             {
-                query = query.Where(entity => entity.Name.Contains(searchCriteria.Name));
+                var value = property.GetValue(searchCriteria);
+
+                if (value != null)
+                {
+                    filter &= filterBuilder.Eq(property.Name, value);
+                }
             }
 
-            if (!string.IsNullOrEmpty(searchCriteria.InstituteName))
-            {
-                query = query.Where(entity => entity.InstituteName == searchCriteria.InstituteName);
-            }
-
-            if (!string.IsNullOrEmpty(searchCriteria.Gender))
-            {
-                query = query.Where(entity => entity.Gender == searchCriteria.Gender);
-            }
-
-            return query.ToList();
+            return _db.Find(filter).ToList();
         }
+
 
         public bool Update(T entity)
         {
-            if (entity.Id == null)
-                return Insert(entity);
+            var idProperty = typeof(T).GetProperty("Id");
+            if (idProperty == null)
+                throw new InvalidOperationException("Type does not have an 'Id' property.");
 
-            var filter = Builders<T>.Filter.Eq("_id", entity.Id);
+            var idValue = idProperty.GetValue(entity);
+            if (idValue == null)
+                throw new InvalidOperationException("Entity does not have a value for 'Id' property.");
 
+            var filter = Builders<T>.Filter.Eq("_id", idValue);
             return _db.ReplaceOne(filter, entity).ModifiedCount > 0;
         }
     }
 
-
-    //public IList<T> SearchFor(Expression<Func<T, bool>> predicate)
-    //{
-    //    //return _db.AsQueryable<T>().Where(predicate.Compile()).ToList();
-    //    FilterDefinition<T> filterDefinition = Builders<T>.Filter.Where(predicate);
-    //    return _db.Find(filterDefinition).ToList();
-    //}
 
 }

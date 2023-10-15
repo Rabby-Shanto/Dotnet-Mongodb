@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace MongoDbSharp.BLL.Base
 {
-    public abstract class Manager<T> : IManager<T> where T : EntityModel
+    public abstract class Manager<T> : IManager<T> where T : class
     {
         private readonly IRepository<T> _repository;
         public Manager(IRepository<T> repository)
